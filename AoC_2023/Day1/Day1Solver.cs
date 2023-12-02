@@ -1,16 +1,42 @@
 using AoC_2023;
+using AoC_2023.Common;
 
 namespace AoC_2023.Day1;
 
 internal class Day1Solver : IDaySolver
 {
-    public Task<int> SolveAsync()
+    private readonly IRawInputProvider _rawInputProvider;
+    private readonly ICalibrationProvider _calibrationProvider;
+    private readonly ICalibrationFixer _calibrationFixer;
+
+    public Day1Solver(IRawInputProvider rawInputProvider, ICalibrationProvider calibrationProvider, ICalibrationFixer calibrationFixer)
     {
-        return Task.FromResult(0);
+        _rawInputProvider = rawInputProvider;
+        _calibrationProvider = calibrationProvider;
+        _calibrationFixer = calibrationFixer;
     }
 
-    public Task<int> SolveBonusAsync()
+    public async Task<int> SolveAsync()
     {
-        return Task.FromResult(0);
+        var sum = 0;
+
+        await foreach(var line in _rawInputProvider.ProvideRawInputAsync())
+        {
+            sum += _calibrationProvider.ProvideCalibration(line);
+        }
+
+        return sum;
+    }
+
+    public async Task<int> SolveBonusAsync()
+    {
+        var sum = 0;
+
+        await foreach(var line in _rawInputProvider.ProvideRawInputAsync())
+        {
+            sum += _calibrationProvider.ProvideCalibration(_calibrationFixer.FixCalibrationLine(line));
+        }
+
+        return sum;
     }
 }
