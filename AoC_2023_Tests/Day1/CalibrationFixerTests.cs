@@ -1,7 +1,7 @@
 using AoC_2023.Day1;
 using FluentAssertions;
 
-namespace AoC_2023_Tests;
+namespace AoC_2023_Tests.Day1;
 
 public class CalibrationFixerTests
 {
