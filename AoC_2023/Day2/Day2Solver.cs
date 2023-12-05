@@ -8,7 +8,7 @@ internal class Day2Solver(IRawInputProvider rawInputProvider, IGameProvider game
     private readonly IRawInputProvider _rawInputProvider = rawInputProvider;
     private readonly IGameProvider _gameProvider = gameProvider;
 
-    public async Task<int> SolveAsync()
+    public async Task<long> SolveAsync()
     {
         var validGamesSum = 0;
 
@@ -23,7 +23,7 @@ internal class Day2Solver(IRawInputProvider rawInputProvider, IGameProvider game
         return validGamesSum;
     }
 
-    public async Task<int> SolveBonusAsync()
+    public async Task<long> SolveBonusAsync()
     {
         var sumOfPowers = 0;
 

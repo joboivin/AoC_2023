@@ -9,14 +9,14 @@ internal class Day3Solver(IInputProvider inputProvider, IPartNumbersExtractor pa
     private readonly IPartNumbersExtractor _partNumbersExtractor = partNumbersExtractor;
     private readonly IGearRatioCalculator _gearRatioCalculator = gearRatioCalculator;
 
-    public async Task<int> SolveAsync()
+    public async Task<long> SolveAsync()
     {
         var input = await _inputProvider.ProvideInputAsync();
 
         return _partNumbersExtractor.ExtractPartNumbers(input, false).Select(x => x.Number).Sum();
     }
 
-    public async Task<int> SolveBonusAsync()
+    public async Task<long> SolveBonusAsync()
     {
         var input = await _inputProvider.ProvideInputAsync();
 

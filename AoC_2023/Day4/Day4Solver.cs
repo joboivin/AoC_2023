@@ -8,7 +8,7 @@ internal class Day4Solver(IRawInputProvider rawInputProvider, ICardProvider card
     private readonly IRawInputProvider _rawInputProvider = rawInputProvider;
     private readonly ICardProvider _cardProvider = cardProvider;
 
-    public async Task<int> SolveAsync()
+    public async Task<long> SolveAsync()
     {
         var pointsSum = 0;
 
@@ -24,7 +24,7 @@ internal class Day4Solver(IRawInputProvider rawInputProvider, ICardProvider card
         return pointsSum;
     }
 
-    public async Task<int> SolveBonusAsync()
+    public async Task<long> SolveBonusAsync()
     {
         var cardsTotal = new Dictionary<int, int>();
 

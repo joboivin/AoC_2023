@@ -16,7 +16,7 @@ internal class Day1Solver : IDaySolver
         _calibrationFixer = calibrationFixer;
     }
 
-    public async Task<int> SolveAsync()
+    public async Task<long> SolveAsync()
     {
         var sum = 0;
 
@@ -28,7 +28,7 @@ internal class Day1Solver : IDaySolver
         return sum;
     }
 
-    public async Task<int> SolveBonusAsync()
+    public async Task<long> SolveBonusAsync()
     {
         var sum = 0;
 
