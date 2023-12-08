@@ -1,5 +1,5 @@
 ﻿using AoC_2023.Common;
-using AoC_2023.Day7;
+using AoC_2023.Day8;
 
 namespace AoC_2023;
 
@@ -13,7 +13,8 @@ class Program
         //var solver = new Day4Solver(new RawInputProvider("Day4/Input.txt"), new CardProvider());
         //var solver = new Day5Solver(new DestinationCalculator(), new AlmanacProvider(new RawInputProvider("Day5/Input.txt")));
         //var solver = new Day6Solver(new RaceProvider(new RawInputProvider("Day6/Input.txt")), new WinningWaysCalculator());
-        var solver = new Day7Solver(new HandsProvider(new RawInputProvider("Day7/Input.txt")), new HandComparer(), new BonusHandComparer());
+        //var solver = new Day7Solver(new HandsProvider(new RawInputProvider("Day7/Input.txt")), new HandComparer(), new BonusHandComparer());
+        var solver = new Day8Solver(new NetworkProvider(new RawInputProvider("Day8/Input.txt")), new NetworkNavigator());
 
         await RunAsync(solver);
     }
